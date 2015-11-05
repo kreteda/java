@@ -22,11 +22,11 @@
         <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="jdbc" />
+        <module name="projekt1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="jdbc" target="1.5" />
+      <module name="projekt1" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
