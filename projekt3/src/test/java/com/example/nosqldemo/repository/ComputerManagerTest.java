@@ -12,6 +12,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
@@ -19,6 +21,8 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 import com.example.nosqldemo.domain.Computer;
 import com.example.nosqldemo.domain.Person;
 import com.example.nosqldemo.service.ComputerManager;
+import com.mongodb.DB;
+ 
  
  
 
@@ -46,8 +50,10 @@ public class ComputerManagerTest {
     }
 	
 	@After
-	    public void usunTestowaneDane() {
+	
 
+	    public void usunTestowaneDane() {
+			personManager.deleteAll();
 		
 	        List<Computer> computers2 = computerManager.getComputers();
 
@@ -241,6 +247,7 @@ public class ComputerManagerTest {
 		
 		Person p1 = new Person();
 		p1.setName("Gosia");
+		p1.setSurname("Staszczyk");
 		
 		Computer c1 = new Computer();
 		c1.setMake("Apple");
@@ -264,27 +271,23 @@ public class ComputerManagerTest {
 		computers.add(c1);
 		computers.add(c2);
 		computers.add(c3);
-		computers.remove(c3.getId());
-		p1.setComputers(computers);
+		 
+		p1.setComputers(computers); 
 		
 		 
  		
 		personManager.save(p1);
-		
-		 
+     
 		Person aGirl = personManager.findById(p1.getId());
-		List<Computer> retriverdComputers = new ArrayList<Computer>(aGirl.getComputers());
-		String make2="Apple";
-	 
-		
- 		 aGirl.dellComputersByMake(retriverdComputers, make2);
- 		 
-		 
-		 
+	    
  
-	List<Computer> computers3 = new ArrayList<Computer>(aGirl.getComputers());
+	  List<Computer> computers3 = new ArrayList<Computer>(aGirl.getComputers());
 	
 	assertTrue(computers3.size() == 3);
 	 
 	}
+	
+ 
+	
+	
 }

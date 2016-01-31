@@ -11,8 +11,11 @@ public interface PersonRepository extends CrudRepository<Person, ObjectId> {
 	
 	List<Person> findByName(String name);
 	
-	Person findById(ObjectId id);
+	Person findById(ObjectId objectId);
 
+	 
+
+	//List<Person> findByNameSurname(String name, String surname);
 	//Person dellPerson();
 	 
 }

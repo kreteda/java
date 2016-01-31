@@ -29,7 +29,12 @@ public class ComputerManager {
 		personRepository.delete(person);
 	}
 	
- 
+	public long getAllUsers()
+	{
+		
+		return personRepository.count();
+		
+	}
 	
 	public void dellComputersByMake(List<Computer> computers, String make){
 		for(Computer computer:computers)
