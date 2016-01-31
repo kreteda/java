@@ -15,19 +15,22 @@ public class ComputerManager {
 	@Autowired
 	private  ComputerRepository computerRepository;
 	
-	public void addNewCar(Computer computer){
+	public void addNewComputer(Computer computer){
 		computerRepository.save(computer);
 	}
+	public void dellComputer(Computer computer){
+		computerRepository.delete(computer);
+	}
 	
-	public List<Computer> getCars(String make){
+	public List<Computer> getComputers(String make){
 		return computerRepository.findByMake(make);
 	}
 	
-	public List<Computer> getCars(String make, String model){
-		return computerRepository.znajdzAuto(make, model);
+	public List<Computer> getComputers(String make, String model){
+		return computerRepository.znajdzKomputer(make, model);
 	}
 	
-	public Computer getCar(ObjectId id){
+	public Computer getComputer(ObjectId id){
 		return computerRepository.findById(id);
 	}
 	

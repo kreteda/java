@@ -1,5 +1,6 @@
 package com.example.nosqldemo.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.bson.types.ObjectId;
@@ -27,13 +28,25 @@ public class Person {
 		this.name = name;
 	}
 
-	public List<Computer> getCars() {
+	public List<Computer> getComputers() {
 		return computers;
 	}
 
-	public void setCars(List<Computer> computers) {
+	public void setComputers(List<Computer> computers) {
 		this.computers = computers;
 	}
 	
+	public List<Computer> dellComputers(List<Computer> computers,String make) {
+		List<Computer> computers3 = new ArrayList<Computer>();
+		for(Computer computer2 : computers)
+		{
+			if(computer2.getMake()!=make)
+			{
+				computers3.add(computer2);
+			}
+		}
+		return this.computers = computers3;
+		
+	}
 	
 }

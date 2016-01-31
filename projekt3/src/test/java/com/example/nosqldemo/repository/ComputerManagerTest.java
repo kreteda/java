@@ -23,24 +23,25 @@ public class ComputerManagerTest {
 	@Test
 	public void checkAdding(){
 		Computer computer = new Computer();
-		computer.setMake("Ford");
-		computer.setModel("Fiesta");
-		computer.setYop(1998);
-		computerManager.addNewCar(computer);
+		computer.setMake("HP");
+		computer.setModel("6555p");
+	 
+		computerManager.addNewComputer(computer);
 		
 		Computer computer2 = new Computer();
-		computer2.setMake("Ford");
-		computer2.setModel("Focus");
-		computer2.setYop(1998);
-		computerManager.addNewCar(computer2);
+		computer2.setMake("Fujitsu");
+		computer2.setModel("S760");
+	 
+		computerManager.addNewComputer(computer2);
 		
 		Computer computer3 = new Computer();
-		computer3.setMake("Fiat");
-		computer3.setModel("Punto");
-		computer3.setYop(2011);
-		computerManager.addNewCar(computer3);
+		computer3.setMake("HP");
+		computer3.setModel("6555p");
+		 
+		computerManager.addNewComputer(computer3);
+		computerManager.dellComputer(computer3);
 		
-		List<Computer> computers = computerManager.getCars("Ford");
+		List<Computer> computers = computerManager.getComputers("HP");
 		
 		assertTrue(computers.size() >= 2);
 	}
