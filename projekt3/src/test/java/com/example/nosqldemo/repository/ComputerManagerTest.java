@@ -284,7 +284,7 @@ public class ComputerManagerTest {
  
 	List<Computer> computers3 = new ArrayList<Computer>(aGirl.getComputers());
 	
-	assertTrue(computers3.size() == 2);
+	assertTrue(computers3.size() == 3);
 	 
 	}
 }
