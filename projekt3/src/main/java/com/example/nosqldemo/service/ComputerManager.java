@@ -26,6 +26,11 @@ public class ComputerManager {
 		return computerRepository.findByMake(make);
 	}
 	
+	public List<Computer> getComputers(){
+		return (List<Computer>) computerRepository.findAll();
+	}
+	
+	
 	public List<Computer> getComputers(String make, String model){
 		return computerRepository.znajdzKomputer(make, model);
 	}

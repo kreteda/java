@@ -4,22 +4,44 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
+import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.transaction.TransactionConfiguration;
 
 import com.example.nosqldemo.domain.Computer;
 import com.example.nosqldemo.service.ComputerManager;
+ 
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:/beans.xml" })
+@TransactionConfiguration(transactionManager = "txManager", defaultRollback = true)
 public class ComputerManagerTest {
 	
 	@Autowired
 	ComputerManager computerManager;
 	
+	@After
+	    public void usunTestowaneDane() {
+
+		
+	        List<Computer> computers = computerManager.getComputers();
+
+	      
+	        for(Computer computer : computers) {
+	         
+	         
+	        
+	        computerManager.dellComputer(computer);
+	        	
+	        }
+	        
+	    }
+	 
+	 
 	@Test
 	public void checkAdding(){
 		Computer computer = new Computer();
@@ -43,7 +65,7 @@ public class ComputerManagerTest {
 		
 		List<Computer> computers = computerManager.getComputers("HP");
 		
-		assertTrue(computers.size() >= 2);
+		assertTrue(computers.size() == 1);
 	}
 
 }
