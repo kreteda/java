@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.example.nosqldemo.domain.Car;
+import com.example.nosqldemo.domain.Computer;
 import com.example.nosqldemo.domain.Person;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -21,7 +21,7 @@ public class PersonManagerTest {
 	@Autowired
 	PersonRepository personManager;
 	@Autowired
-	CarRepository carRepository;
+	ComputerRepository computerRepository;
 	
 	@Test
 	public void checkAdding(){
@@ -29,22 +29,22 @@ public class PersonManagerTest {
 		Person p1 = new Person();
 		p1.setName("Gosia");
 		
-		Car c1 = new Car();
+		Computer c1 = new Computer();
 		c1.setMake("Toyota");
 		c1.setModel("Yaris");
-		carRepository.save(c1);
+		computerRepository.save(c1);
 		
 		
-		Car c2 = new Car();
+		Computer c2 = new Computer();
 		c2.setMake("Honda");
 		c2.setModel("Accord");
-		carRepository.save(c2);
+		computerRepository.save(c2);
 		
-		List<Car> cars = new ArrayList<Car>();
-		cars.add(c1);
-		cars.add(c2);
+		List<Computer> computers = new ArrayList<Computer>();
+		computers.add(c1);
+		computers.add(c2);
 		
-		p1.setCars(cars);
+		p1.setCars(computers);
 		
 		
 		personManager.save(p1);

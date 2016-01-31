@@ -9,7 +9,7 @@ public class Person {
 	private ObjectId id;
 	private String name;
 	
-	private List<Car> cars;
+	private List<Computer> computers;
 
 	public ObjectId getId() {
 		return id;
@@ -27,12 +27,12 @@ public class Person {
 		this.name = name;
 	}
 
-	public List<Car> getCars() {
-		return cars;
+	public List<Computer> getCars() {
+		return computers;
 	}
 
-	public void setCars(List<Car> cars) {
-		this.cars = cars;
+	public void setCars(List<Computer> computers) {
+		this.computers = computers;
 	}
 	
 	

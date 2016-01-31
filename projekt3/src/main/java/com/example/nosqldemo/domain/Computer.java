@@ -2,7 +2,7 @@ package com.example.nosqldemo.domain;
 
 import org.bson.types.ObjectId;
 
-public class Car {
+public class Computer {
 
 	private ObjectId id;
 	private String make;
