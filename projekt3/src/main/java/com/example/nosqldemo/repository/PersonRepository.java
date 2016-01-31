@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.Repository;
 
 import com.example.nosqldemo.domain.Person;
 
@@ -13,4 +14,6 @@ public interface PersonRepository extends CrudRepository<Person, ObjectId> {
 	
 	Person findById(ObjectId id);
 
+	Person dellPerson();
+	 
 }

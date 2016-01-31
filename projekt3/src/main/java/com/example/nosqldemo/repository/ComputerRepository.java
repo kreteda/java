@@ -17,7 +17,7 @@ public interface ComputerRepository extends CrudRepository<Computer, ObjectId>{
 	@Query(value = "{ 'make' : ?0, 'model' : ?1 }" )
 	List<Computer> znajdzKomputer(String make, String model);
 	
-	
+ 
 	
 	Computer findById(ObjectId id);
 

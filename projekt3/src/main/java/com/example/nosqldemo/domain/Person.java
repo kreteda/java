@@ -36,17 +36,21 @@ public class Person {
 		this.computers = computers;
 	}
 	
-	public List<Computer> dellComputers(List<Computer> computers,String make) {
-		List<Computer> computers3 = new ArrayList<Computer>();
-		for(Computer computer2 : computers)
+ 
+	public void dellComputersByMake(List<Computer> computers,String make) {
+		//this.computers = computers;
+		List<Computer> comps =  new ArrayList<Computer>();
+		
+		for(Computer computer:computers)
 		{
-			if(computer2.getMake()!=make)
+			if(computer.getMake()!=make)
 			{
-				computers3.add(computer2);
+			comps.add(computer);
 			}
 		}
-		return this.computers = computers3;
-		
+		this.computers=comps;
 	}
+	
+	 
 	
 }
